@@ -1,7 +1,7 @@
 # HTML Deck Presentation Framework
 
 <div align="center">
-  <img src="assets/media/placeholder-wide.svg" alt="HTML Deck Cover" width="100%">
+  <img src=".github_assets/img.png" alt="HTML Deck Cover" width="90%">
 </div>
 
 <p align="center">
