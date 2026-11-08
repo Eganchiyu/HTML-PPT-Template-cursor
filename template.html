@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>报告标题 · 汇报人 | 场合名称</title>
+  <link rel="stylesheet" href="assets/vendor/reveal/reveal.css">
+  <script>
+    /* 首屏防闪白：若将要播放开屏汇聚动画，先预涂深色底并隐藏正文，动画 stage 一挂载即撤除 */
+    (function () {
+      var skip = new URLSearchParams(location.search).get('no-intro') === '1';
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var h = location.hash;
+      var atCover = h === '' || h === '#/' || h === '#/0';
+      if (!skip && !reduce && atCover) {
+        document.documentElement.classList.add('intro-pending');
+      }
+    })();
+  </script>
+  <style>
+/* __INJECT_CUSTOM_CSS__ */
+  </style>
+</head>
+<body>
+  <!-- Subtle Architectural Background -->
+  <div class="ambient-canvas" aria-hidden="true">
+    <div class="ambient-grid"></div>
+    <div class="ambient-aurora">
+      <span class="ambient-blob ambient-blob-a"></span>
+      <span class="ambient-blob ambient-blob-b"></span>
+      <span class="ambient-blob ambient-blob-c"></span>
+    </div>
+    <div class="ambient-sheen"></div>
+    <div class="ambient-dust"></div>
+  </div>
+
+  <!-- Top Chapter Navigation Bar -->
+  <nav class="deck-topbar is-cover" id="deckTopbar" aria-label="演示章节导航">
+    <div class="compass-item active" data-target-chapter="cover">
+      <span class="compass-num">00</span><span>封面</span>
+    </div>
+    <div class="compass-item" data-target-chapter="background">
+      <span class="compass-num">01</span><span>背景与问题</span>
+    </div>
+    <div class="compass-item" data-target-chapter="method">
+      <span class="compass-num">02</span><span>方法与路径</span>
+    </div>
+    <div class="compass-item" data-target-chapter="cases">
+      <span class="compass-num">03</span><span>案例与证据</span>
+    </div>
+    <div class="compass-item" data-target-chapter="data">
+      <span class="compass-num">04</span><span>数据观测</span>
+    </div>
+    <div class="compass-item" data-target-chapter="closing">
+      <span class="compass-num">05</span><span>结论</span>
+    </div>
+  </nav>
+
+  <!-- Vertical Detail Slide Indicator -->
+  <div class="branch-hint" id="branchHint">
+    <span class="branch-hint-dot"></span>
+    <span>按 ↓ 查看扩展实证 / 按 → 继续主线</span>
+  </div>
+
+  <!-- Spring Hover Full-Image Popout Layer (non-blocking pointer-events: none) -->
+  <div class="hover-pop-layer" id="hoverPopLayer" aria-hidden="true">
+    <div class="hover-pop-scrim" id="hoverPopScrim"></div>
+    <div class="hover-pop-card" id="hoverPopCard">
+      <img id="hoverPopImg" src="" alt="">
+      <div class="hover-pop-caption" id="hoverPopCaption"></div>
+    </div>
+  </div>
+
+  <!-- Click-to-Lock Fullscreen Lightbox -->
+  <div class="lightbox-backdrop" id="imageLightbox">
+    <div class="lightbox-scroll-wrap">
+      <img id="lightboxImg" src="" alt="">
+    </div>
+    <div class="lightbox-hint">滚轮可浏览长图细节 · 点击任意处或按 Esc 关闭</div>
+  </div>
+
+  <!-- Reveal Presentation Root -->
+  <div class="reveal">
+    <div class="slides">
+<!-- __INJECT_SLIDES__ -->
+    </div>
+  </div>
+
+  <script src="assets/vendor/reveal/reveal.js"></script>
+  <script src="assets/vendor/reveal/plugin/notes/notes.js"></script>
+  <script>
+/* __INJECT_CUSTOM_JS__ */
+  </script>
+  <!-- __LIVE_RELOAD_HOOK__ -->
+</body>
+</html>

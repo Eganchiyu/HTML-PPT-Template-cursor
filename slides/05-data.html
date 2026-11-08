@@ -1,0 +1,165 @@
+<!-- ==================== CHAPTER 04: DATA OBSERVATION ==================== -->
+
+<!-- Slide 4.1: Statistics dashboard (KPI + distribution + trend + scale) -->
+<section data-chapter="data">
+  <header class="slide-header">
+    <div class="section-kicker">04 / DATA</div>
+    <div class="header-row">
+      <h2 class="slide-title">数据观测：四件套仪表盘</h2>
+      <p class="slide-lead">KPI 数字、分布柱、趋势线、换算标尺，数值务必真实可溯源。</p>
+    </div>
+  </header>
+
+  <div class="slide-stage">
+    <div class="stat-board">
+      <!-- 1) KPI row -->
+      <div class="stat-kpi-row">
+        <div class="stat-kpi">
+          <div class="stat-kpi-label">Metric 01</div>
+          <div class="stat-kpi-value">68.4<span>%</span></div>
+          <div class="stat-kpi-note">口径：说明这个比例的分子分母</div>
+        </div>
+        <div class="stat-kpi">
+          <div class="stat-kpi-label">Metric 02</div>
+          <div class="stat-kpi-value">12,480<span>hm²</span></div>
+          <div class="stat-kpi-note">口径：统计范围与时间点</div>
+        </div>
+        <div class="stat-kpi">
+          <div class="stat-kpi-label">Metric 03</div>
+          <div class="stat-kpi-value">3.2<span>倍</span></div>
+          <div class="stat-kpi-note">相对基期年份的倍数变化</div>
+        </div>
+        <div class="stat-kpi">
+          <div class="stat-kpi-label">Metric 04</div>
+          <div class="stat-kpi-value">18<span>个月</span></div>
+          <div class="stat-kpi-note">达到当前水平所需的周期</div>
+        </div>
+      </div>
+
+      <div class="stat-main">
+        <!-- 2) Distribution -->
+        <div class="stat-panel">
+          <div class="stat-panel-head">
+            <span class="stat-panel-title">分布：按维度拆分的占比</span>
+            <span class="stat-panel-sub">hover to read exact value</span>
+          </div>
+          <div class="stat-bars-plot">
+            <div class="stat-bar"><span class="stat-bar-val">24</span><div class="stat-bar-fill" style="height: 38%;"></div><span class="stat-bar-x">A</span></div>
+            <div class="stat-bar"><span class="stat-bar-val">41</span><div class="stat-bar-fill" style="height: 62%;"></div><span class="stat-bar-x">B</span></div>
+            <div class="stat-bar"><span class="stat-bar-val">57</span><div class="stat-bar-fill" style="height: 84%;"></div><span class="stat-bar-x">C</span></div>
+            <div class="stat-bar"><span class="stat-bar-val">33</span><div class="stat-bar-fill" style="height: 50%;"></div><span class="stat-bar-x">D</span></div>
+            <div class="stat-bar"><span class="stat-bar-val">46</span><div class="stat-bar-fill" style="height: 69%;"></div><span class="stat-bar-x">E</span></div>
+            <div class="stat-bar is-muted"><span class="stat-bar-val">19</span><div class="stat-bar-fill" style="height: 30%;"></div><span class="stat-bar-x">F</span></div>
+            <div class="stat-bar"><span class="stat-bar-val">52</span><div class="stat-bar-fill" style="height: 78%;"></div><span class="stat-bar-x">G</span></div>
+            <div class="stat-bar is-muted"><span class="stat-bar-val">15</span><div class="stat-bar-fill" style="height: 24%;"></div><span class="stat-bar-x">H</span></div>
+          </div>
+        </div>
+
+        <!-- 3) Trend curve -->
+        <div class="stat-panel">
+          <div class="stat-panel-head">
+            <span class="stat-panel-title">趋势：逐年累计</span>
+            <span class="stat-panel-sub">2019 — 2025</span>
+          </div>
+          <div class="stat-trend-body">
+            <svg class="stat-trend-svg" viewBox="0 0 460 200" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="trendArea" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#1d4ed8" stop-opacity="0.18"/>
+                  <stop offset="100%" stop-color="#1d4ed8" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+              <line x1="0" y1="40" x2="460" y2="40" stroke="rgba(15,23,42,0.07)" stroke-width="1"/>
+              <line x1="0" y1="90" x2="460" y2="90" stroke="rgba(15,23,42,0.07)" stroke-width="1"/>
+              <line x1="0" y1="140" x2="460" y2="140" stroke="rgba(15,23,42,0.07)" stroke-width="1"/>
+              <path class="stat-trend-area" d="M 10 168 L 78 152 L 146 138 L 214 106 L 282 88 L 350 58 L 450 30 L 450 180 L 10 180 Z" fill="url(#trendArea)"/>
+              <path class="stat-trend-line" d="M 10 168 L 78 152 L 146 138 L 214 106 L 282 88 L 350 58 L 450 30"
+                    stroke="#1d4ed8" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle class="stat-trend-dot" cx="350" cy="58" r="5" fill="#ffffff" stroke="#1d4ed8" stroke-width="3"/>
+            </svg>
+            <div class="stat-trend-legend">
+              <span><i style="background:#1d4ed8;"></i>累计值</span>
+              <span><i style="background:#cbd5e1;"></i>标注点为拐点</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4) Scale bar -->
+      <div class="stat-scale">
+        <div class="stat-scale-label">
+          换算标尺
+          <span>MAKE THE NUMBER FEEL REAL</span>
+        </div>
+        <div class="stat-scale-track">
+          <div class="stat-scale-row">
+            <span>对照量 A</span>
+            <div class="stat-scale-rail"><div class="stat-scale-fill fill-muted" style="width: 100%;"></div></div>
+            <span class="stat-scale-val">100%</span>
+          </div>
+          <div class="stat-scale-row">
+            <span>本报告量</span>
+            <div class="stat-scale-rail"><div class="stat-scale-fill fill-accent" style="width: 34%;"></div></div>
+            <span class="stat-scale-val">34% · ×0.34</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <aside class="notes">
+    仪表盘页口头讲三件事：数字多大、分布不均在哪、趋势拐点为什么出现在那里。换数值时注意 KPI 与正文要同源。
+  </aside>
+</section>
+
+<!-- Slide 4.2: Two charts side by side, denser layout -->
+<section data-chapter="data">
+  <header class="slide-header">
+    <div class="section-kicker">04 / DATA</div>
+    <div class="header-row">
+      <h2 class="slide-title">对比：两组口径并排放</h2>
+      <p class="slide-lead">同一指标在不同口径下的差异，最能说明问题出在哪。</p>
+    </div>
+  </header>
+
+  <div class="slide-stage">
+    <div class="stage-split-left">
+      <div class="stat-panel">
+        <div class="stat-panel-head">
+          <span class="stat-panel-title">口径一</span>
+          <span class="stat-panel-sub">UNIT / YEAR</span>
+        </div>
+        <div class="stat-bars-plot" style="border-bottom: none;">
+          <div class="stat-bar"><span class="stat-bar-val">31</span><div class="stat-bar-fill" style="height: 45%;"></div><span class="stat-bar-x">Q1</span></div>
+          <div class="stat-bar"><span class="stat-bar-val">44</span><div class="stat-bar-fill" style="height: 64%;"></div><span class="stat-bar-x">Q2</span></div>
+          <div class="stat-bar"><span class="stat-bar-val">38</span><div class="stat-bar-fill" style="height: 55%;"></div><span class="stat-bar-x">Q3</span></div>
+          <div class="stat-bar"><span class="stat-bar-val">57</span><div class="stat-bar-fill" style="height: 83%;"></div><span class="stat-bar-x">Q4</span></div>
+        </div>
+      </div>
+
+      <div class="thesis-col">
+        <div class="point-list">
+          <div class="point-item">
+            <div class="point-num">01</div>
+            <div class="point-body">
+              <h3>差异在哪</h3>
+              <p>指出两组数据的差距来源，不要只说"有差异"。</p>
+            </div>
+          </div>
+          <div class="point-item">
+            <div class="point-num num-indigo">02</div>
+            <div class="point-body">
+              <h3>为什么重要</h3>
+              <p>这个差异会影响哪个判断。</p>
+            </div>
+          </div>
+        </div>
+        <div class="thesis-note">强调句：本页的口径选择直接决定了结论方向。</div>
+      </div>
+    </div>
+  </div>
+
+  <aside class="notes">
+    对比页的两组图必须同尺度，否则差异是画出来的，不是数据里的。
+  </aside>
+</section>
