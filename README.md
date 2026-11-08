@@ -1,9 +1,5 @@
 # HTML Deck Presentation Framework
 
-<div align="center">
-  <img src=".github_assets/img.png" alt="HTML Deck Cover" width="90%">
-</div>
-
 <p align="center">
   <b>一套面向学术与专业汇报的高端 1920×1080 网页演示模板系统</b><br>
   零第三方构建依赖 | 模块化源码 | 离线编译 | 沉浸式大屏放映
